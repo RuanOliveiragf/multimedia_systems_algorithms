@@ -1,3 +1,4 @@
+#o codigo do odio
 import re
 
 dict = {
@@ -16,8 +17,7 @@ new_text = padrao.sub(lambda match: dict.get(match.group(0), match.group(0)), te
 
 new_size = len(new_text.encode('utf-8'))
 
-# Calcular a taxa de compressão e arredondar para duas casas decimais
-com_rate = round(new_size / ori_size, 2)
+com_rate = int((new_size / ori_size) * 100) / 100
 
 print(new_text)
-print("Taxa de compressao:{:.2f}".format(com_rate))
+print("Taxa de compressao:{}%".format(com_rate))
